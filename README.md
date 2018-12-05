@@ -1,22 +1,14 @@
 # Video2X Video Enlarger
 
-## WARNING: Version 2.1.1 might be unstable.
-
-A test is undergoing for version 2.1.1 to verify is stability. Please wait patiently for us to finish the tests. It shouldn't take longer than half a day.
-
 ### This software is currently designed for Windows.
 
-## 2.1.4 (November 2, 2018)
+## Setup Script (November 29, 2018)
 
-- Added hardware acceleration option for ffmpeg. Ffmpeg will use hardware acceleration (GPU, usually) if `--gpu` or `--cudnn` is given. You can customize the method to use in `video2x.json`.
+- Added setup script. Now you can install dependencies and generate video2x configuraiton automatically by running the `video2x_setup.py` script.
 
-## 2.1.1 (October 22, 2018)
+## 2.1.6 (November 26, 2018)
 
-- Fixed video stream and audio stream indexing issues.
-
-## 2.1.0 (October 22, 2018)
-
-- Added multithreading.
+- Restored the option to define a factor which the will be upscaled by, which is suggested by @wuast94 .
 
 ## Description
 
@@ -26,7 +18,7 @@ For short: **Video2X enlarges your video without losing details**
 
 Watch for the sharper edges in this screenshot around the shadows:
 
-[![preview](https://user-images.githubusercontent.com/18014964/36638068-19cdb78c-19b8-11e8-8dfb-406b7015d30c.png)](https://www.youtube.com/watch?v=PG94iPoeoZk)
+[![preview](https://user-images.githubusercontent.com/21986859/49412428-65083280-f73a-11e8-8237-bb34158a545e.png)
 
 **Or you can watch the YouTube video Demo: https://www.youtube.com/watch?v=PG94iPoeoZk**
 
@@ -46,6 +38,15 @@ Download: https://ffmpeg.org/download.html
 - **waifu2x-caffe for Windows**  
 Download: https://github.com/lltcggie/waifu2x-caffe/releases
 
+### Install Dependencies
+
+You can run the `video2x_setup.py` script to install and configure the depencies automatically. This script is designed and tested on Windows 10.
+
+This script will install `ffmpeg`, `waifu2x-caffe` to `%LOCALAPPDATA%\\video2x` and all python libraries.
+
+```bash
+$ python video2x_setup.py
+```
 
 After downloading the dependencies, clone the video2x package.
 
@@ -58,7 +59,6 @@ Then you'll need to install python dependencies before start using video2x. Inst
 ```bash
 $ pip install -r requirements.txt
 ```
-
 
 ## Quick Start
 
